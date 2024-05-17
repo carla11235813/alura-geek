@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+@font-face {
+    font-family: "pixel";
+    src: url('fonte/Pixel12x10Mono-v1.1.0.ttf');
+}
+
+:root {
+    --main-color: #5300c8;
+    --second-color: #03318c;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "IBM Plex Mono", monospace;
+}
+
+header {
+    background-color: var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 50px;
+}
+
+main h1 {
+    text-transform: uppercase;
+    padding-top: 70px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.meus__produtos__linha {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    height: 50vh;
+    overflow-y: auto;
+}
+
+.meus__produtos__card {
+    background-color: var(--main-color);
+    width: 190px;
+    color: #fff;
+    border-radius: 10px;
+    padding: 7px;
+    border: 3px solid black;
+    cursor: pointer;
+}
+
+.card__img {
+    width: 170px;
+    height: 170px;
+    overflow: hidden;
+}
+
+.meus__produtos__card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 3px solid black;
+    border-radius: 8px;
+}
+
+.card__titulo {
+    padding-top: 10px;
+}
+
+.card__titulo h3 {
+    font-weight: 400;
+}
+
+.card_preco {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card_preco h3 {
+    word-spacing: 5px;
+}
+
+.card_preco button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+}
+
+#formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#formulario input, .custom-file-upload {
+    border: 2px solid var(--second-color);
+    border-radius: 25px;
+    padding: 13px 10px;
+    font-size: 15px;
+    color: var(--second-color);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#formulario input:hover, .custom-file-upload:hover {
+    background-color: #03318c3f;
+}
+
+#formulario input::placeholder {
+    color: var(--second-color);
+}
+
+.custom-file-upload input[type="file"] {
+    position: absolute;
+    left: -9999px;
+}
+
+#formulario__botoes {
+    display: flex; 
+    justify-content: center;
+    gap: 20px;
+}
+
+#formulario__botoes button {
+    border: 2px solid var(--second-color);
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#formulario__botoes button[type="submit"]:hover {
+    background-color: #03318c3f;
+    color: #03318c;
+}
+
+#formulario__botoes button:hover {
+    background-color: #03318c;
+    color: #fff;
+}
+
+#btn__guardar {
+    background-color: var(--second-color);
+    color: #fff;
+}
+
+#btn__limpar {
+    background-color: #fff;
+    color: var(--second-color);
+}
+
+footer {
+    background-color: var(--main-color);
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    padding: 20px;
+}
+
+footer p {
+    padding-top: 10px;
+}
+
+.footer__paragrafo {
+    font-weight: 200;
+}
+
+@media screen and (max-width: 1000px) {
+    main {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width:480px) {
+   
+    .logo img {
+        width: 290px;
+    }
+
+    .meus__produtos__linha {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .meus__produtos__card {
+        width: 150px;
+        color: #fff;
+        border-radius: 10px;
+        padding: 7px;
+        border: 3px solid black;
+    }
+    
+    .card__img {
+        width: 130px;
+        height: 130px;
+    }
+
+    #formulario {
+        width: 90vw;
+    }
+
+    #formulario input {
+        border-radius: 20px;
+        padding: 10px;
+    }
+    
+    #formulario__botoes {
+        display: flex; 
+        justify-content: center;
+        gap: 20px;
+    }
+}
